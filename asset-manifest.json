@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/spider-man/static/css/main.1b0d4d7e.css",
+    "main.js": "/spider-man/static/js/main.4a61603f.js",
+    "static/media/text.png": "/spider-man/static/media/text.d921b55068fb666f5b4d.png",
+    "static/media/marvel-logo.svg": "/spider-man/static/media/marvel-logo.f64c057bbe349be7d601d4046d296c6c.svg",
+    "index.html": "/spider-man/index.html",
+    "main.1b0d4d7e.css.map": "/spider-man/static/css/main.1b0d4d7e.css.map",
+    "main.4a61603f.js.map": "/spider-man/static/js/main.4a61603f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1b0d4d7e.css",
+    "static/js/main.4a61603f.js"
+  ]
+}
