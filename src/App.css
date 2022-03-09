@@ -1,38 +1,406 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
+#app {
+  width: 100%;
+  height: 100vh;
+  background: #0f0f1b;
+  overflow: hidden;
+  color: #fff;
+  font-family: 'Public Sans', sans-serif;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+#logo {
+  height: fit-content;
+}
+#layout {
+  height: 70%;
+}
+#heroCover {
+  position: relative;
+}
+#heroCover * {
+  z-index: 1;
+}
+#heroCover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60%;
+  height: 100%;
+  background: url('https://res.cloudinary.com/coderabbi/image/upload/v1646776693/spiderman/spiderman-cover_qf8tsb.jpg');
+  background-size: cover;
+  background-size: 200%;
+  background-position: 70% 20%;
+  background-repeat: no-repeat;
+  filter: blur(14px) brightness(60%);
+  z-index: 0;
+  border: 1px solid #fff;
+}
+#heroCover::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80%;
+  height: 110%;
+  background: linear-gradient(to right, #0f0f1b 50%, transparent 100%);
+  z-index: 0;
+}
+#social {
+  width: 15%;
+}
+.icons {
+  transition: all 200ms ease-in-out;
+}
+.icons > * {
+  font-size: 1.7em;
+  transition: all 200ms ease-in-out;
+}
+.icons > *:hover {
+  transform: scale(1.4);
+}
+.icons:nth-child(1):hover {
+  color: #ff0050;
+}
+.icons:nth-child(2):hover {
+  color: #FF0000;
+}
+.icons:nth-child(3):hover {
+  color: #1DA1F2;
+}
+.icons:nth-child(4):hover {
+  color: #4267B2;
+}
+.icons:nth-child(5):hover {
+  color: #E1306C;
+}
+#burger {
+  margin-right: .8em;
+}
+#burger .bar {
+  background-color: #fff;
+  height: 2px;
+  transform-origin: 0 0;
+}
+#bar1 {
+  width: 100%;
+}
+#bar2 {
+  width: 75%;
+}
+#bar3 {
+  width: 50%;
+}
+.burgerActive .bar {
+  animation: shrink 500ms ease;
+}
+.burgerActive #bar1 {
+  animation-delay: 0ms;
+}
+.burgerActive #bar2 {
+  animation-delay: 100ms;
+}
+.burgerActive #bar3 {
+  animation-delay: 200ms;
+}
+@keyframes shrink {
+  0% {
+    transform: scaleX(1);
+  }
+  50% {
+    transform: scaleX(.8);
+    background-color: #f11e22;
+  }
+  100% {
+    transform: scaleX(1);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+#heroContent {
+  width: 42.5%;
+  height: 90%;
+}
+#date {
+  color: #fff8;
+  margin-bottom: 1em;
+}
+#spiderText {
+  margin-bottom: 1em;
+  width: 93%;
+}
+#heroText {
+  color: #fffc;
+  line-height: 1.4em;
+  margin-bottom: 1.5em;
+}
+.button {
+  position: relative;
+  border: none;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  padding: 1em;
+  border-radius: 10px;
+  background: #0f0f1b;
+  color: inherit;
+  transition: all 100ms ease;
+  font-family: inherit;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+}
+.button::before {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  transition: all 100ms ease;
+  font-family: inherit;
+}
+.button::after {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 10px;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  transition: all 100ms ease;
+  font-family: inherit;
+}
+#download::before, #download::after {
+  content: "Download Game";
+  background: #e92222;
+}
+#details::before, #details::after {
+  content: "View More Details";
+  background: #0f0f1b;
+}
+#download::before {
+  box-shadow:  4px 4px 12px #501010,
+              -4px -4px 12px #d12f2f;
+}
+#download::after {
+  box-shadow: inset 4px 4px 12px #501010,
+              inset -4px -4px 12px #d12f2f;
+}
+#details::before {
+  box-shadow:  8px 8px 16px #06060b,
+              -8px -8px 16px #18182b;
+}
+#details::after {
+  box-shadow: inset 8px 8px 16px #06060b,
+              inset -8px -8px 16px #18182b;
+}
+.pressed::before {
+  opacity: 0;
+}
+.pressed::after {
+  opacity: 1;
+}
+#download {
+  margin-right: 2em;
+}
+#spiderman {
+  width: 57.5%;
+  position: relative;
+}
+#spiderman img {
+  position: absolute;
+  top: -40%;
+  left: 7%;
+  width: 105%;
+  height: 136%;
 }
 
-.App-link {
-  color: #61dafb;
+
+#videoContainer {
+  height: 30%;
+  overflow: hidden;
+  z-index: 1;
+}
+.video {
+  background-blend-mode: multiply;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  width: 100%;
+}
+.video img {
+  object-fit: cover;
+}
+.video::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background: #0009;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.video_icon {
+  position: absolute;
+  transform: translateY(-700%);
+  width: 4em;
+  height: 4em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+.video_icon::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(1000%);
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  border-radius: 50%;
+  z-index: -1;
+}
+.video:hover::before {
+  width: 100%;
+}
+.video:hover .video_icon {
+  transform: translateY(0%);
+}
+.video_icon:hover {
+  transform: scale(3);
+}
+.video:hover .video_icon::before {
+  transform: translateY(0%);
+}
+.video_icon:hover::before {
+  background: #e92222;
+}
+.video_icon > * {
+  color: #e92222;
+  transition: all 200ms ease;
+}
+.video_icon:hover > * {
+  color: #fff;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+
+
+
+@media screen and (max-width: 850px) {
+  #social {
+    width: 0%;
+    padding: 0;
+    overflow: hidden;
   }
-  to {
-    transform: rotate(360deg);
+  #layout {
+    min-width: 750px;
+    padding-left: 5%;
+  }
+  .button {
+    padding-top: .2em;
+    padding-bottom: .2em;
+  }
+  #spiderman img {
+    top: -42%;
+    left: 14%;
+    width: 150%;
+    height: 140%;
+  }
+}
+@media screen and (max-width: 700px) {
+  #heroContent {
+    width: 100%;
+  }
+  #heroCover::before {
+    background-size: 300%;
+    filter: blur(11px) brightness(85%);
+  }
+  #spiderText {
+    width: 70%;
+  }
+  .button {
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
+  #spiderman {
+    width: 0%;
+  }
+  .video:nth-of-type(1), .video:nth-of-type(3) {
+    width: 0%;
+  }
+}
+@media screen and (max-height: 600px) {
+  #layout {
+    height: 100%;
+    min-height: 420px;
+    min-width: initial;
+  }
+  #videoContainer {
+    height: 0%;
+  }
+}
+@media screen and (min-height: 600px) {
+  #layout {
+    min-width: initial;
+  }
+}
+@media (max-width: 500px) and (min-height: 600px) {
+  #layout {
+    height: 100%;
+    padding-bottom: 3em;
+  }
+  #hero {
+    flex-direction: column-reverse;
+  }
+  #heroContent {
+    height: 90%;
+    justify-self: flex-end;
+    z-index: 2;
+  }
+  #spiderman {
+    width: 100%;
+    height: 100%;
+  }
+  #spiderman > img {
+    top: -70%;
+    width: 110%;
+    height: 180%;
+  }
+  #videoContainer {
+    height: 0%;
+  }
+}
+@media (max-width: 700px) and (min-width: 364px) {
+  .button {
+    padding: 1em auto;
+  }
+}
+@media screen and (max-width: 400px) {
+  .button {
+    padding-top: 1em;
+  }
+  #spiderman > img {
+    top: -70%;
+    left: 5%;
+    width: 150%;
+    height: 190%;
   }
 }
